@@ -1,0 +1,23 @@
+server:
+  port: ${PORT:8084}
+spring:
+  application:
+    name: crazy-hotels
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/crazy_hotels
+    username: root
+    password: root
+  jpa:
+    generate-ddl: true
+    show-sql: true
+ribbon:
+  eureka:
+    enabled: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${DISCOVERY_URL:http://localhost:8080}/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
